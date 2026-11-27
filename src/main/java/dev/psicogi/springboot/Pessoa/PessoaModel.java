@@ -1,6 +1,9 @@
-package dev.psicogi.springboot;
+package dev.psicogi.springboot.Pessoa;
 
+import dev.psicogi.springboot.Tarefa.TarefaModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro")
@@ -11,6 +14,7 @@ public class PessoaModel {
     private String name;
     private int age;
     private String email;
+    private List<TarefaModel> tasks;
 
     public PessoaModel() {
     }
