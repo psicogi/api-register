@@ -14,7 +14,10 @@ public class PessoaModel {
     private String name;
     private int age;
     private String email;
-    private List<TarefaModel> tasks;
+
+    @ManyToOne
+    @JoinColumn(name = "tarefa_id")
+    private TarefaModel task;
 
     public PessoaModel() {
     }

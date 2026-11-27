@@ -13,6 +13,8 @@ public class TarefaModel {
     private Long id;
     private String task;
     private String difficulty;
+
+    @OneToMany(mappedBy = "task")
     private List<PessoaModel> helpers;
 
     public TarefaModel() {
