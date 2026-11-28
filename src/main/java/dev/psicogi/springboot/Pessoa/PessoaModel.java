@@ -2,11 +2,15 @@ package dev.psicogi.springboot.Pessoa;
 
 import dev.psicogi.springboot.Tarefa.TarefaModel;
 import jakarta.persistence.*;
-
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_cadastro")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class PessoaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,37 +22,4 @@ public class PessoaModel {
     @ManyToOne
     @JoinColumn(name = "tarefa_id")
     private TarefaModel task;
-
-    public PessoaModel() {
-    }
-
-    public PessoaModel(String name, int age, String email) {
-        this.name = name;
-        this.age = age;
-        this.email = email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
